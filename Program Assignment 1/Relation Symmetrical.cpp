@@ -3,7 +3,7 @@ using namespace std;
 
 
 void text(){
-	cout<<" Do you want repeat the program again? (y/n) : ";
+	cout<<"\n Do you want repeat the program again? (y/n) : ";
 }
 
 int main(){
@@ -49,42 +49,44 @@ int main(){
 						goto inputB;
 					}
 			}
-		}
-		system("cls");
-		cout<<" Set of A = { "<<A[0];
-		for(int i=1;i<a;i++){
-			cout<<", "<<A[i];
-		}cout<<"}\n\n Set of B = { "<<B[0];
-		for(int i=1;i<b;i++){
-			cout<<", "<<B[i];
-		}cout<<"}\n\n";
-		for (int i = 0; i<manyrel; i++){
-			for (int j = 0; j<manyrel; j++){
-				if(i!=j){
-					if(relA[i] == relB[j]&&relB[i] == relA[j]){
-						yestrue++;
-						break;
+			
+			system("cls");
+			cout<<" Set of A = { "<<A[0];
+			for(int i=1;i<a;i++){
+				cout<<", "<<A[i];
+			}cout<<"}\n\n Set of B = { "<<B[0];
+			for(int i=1;i<b;i++){
+				cout<<", "<<B[i];
+			}cout<<"}\n\n";
+			for (int i = 0; i<manyrel; i++){
+				for (int j = 0; j<manyrel; j++){
+					if(i!=j){
+						if(relA[i] == relB[j]&&relB[i] == relA[j]){
+							yestrue++;
+							break;
+						}
 					}
 				}
 			}
+			cout<<" R ={";
+			cout<<"("<<A[relA[0]]<<","<<B[relB[0]]<<")";
+			for(int i = 1; i<manyrel; i++){
+				cout<<", ("<<A[relA[i]]<<","<<B[relB[i]]<<")";
+			}
+			cout<<"}\n\n";
+			if(yestrue==manyrel){
+				cout<<" The relation is symmetrical";
+				text();
+				cin>>repeat;
+				system("cls");
+			}else{
+				cout<<" The relation is not symmetrical";
+				text();
+				cin>>repeat;
+				system("cls");
+			}		
 		}
-		cout<<" R ={";
-		cout<<"("<<A[relA[0]]<<","<<B[relB[0]]<<")";
-		for(int i = 1; i<manyrel; i++){
-			cout<<", ("<<A[relA[i]]<<","<<B[relB[i]]<<")";
-		}
-		cout<<"}\n\n";
-		if(yestrue==manyrel){
-			cout<<" The relation is symmetrical";
-			text();
-			cin>>repeat;
-			system("cls");
-		}else{
-			cout<<" The relation is not symmetrical";
-			text();
-			cin>>repeat;
-			system("cls");
-		}
+		
 	}while (repeat=='y'||repeat=='Y');
 	return 0;
 }
