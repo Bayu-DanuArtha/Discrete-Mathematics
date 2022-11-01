@@ -36,7 +36,6 @@ int main(){
 	
 	cout<<"Input the value of A Set: ";
 	for(int i=0;i<a;i++){
-		cout
 		cin>>ha[i];
 		isThere[i]=false;
 	}
