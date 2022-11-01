@@ -3,27 +3,27 @@ using namespace std;
 
 int main(){
 	int a, b, c=0;
-	cout<<" Masukkan panjang himpunan A: ";
+	cout<<" Enter the length of the set A : ";
 	cin>>a;
-	cout<<" Masukkan panjang himpunan B: ";
+	cout<<" Enter the length of the set B : ";
 	cin>>b;
 	
 	int A[a], B[b], C[a];
-	cout<<" Masukkan nilai dari himpunan A: ";
+	cout<<" Enter value of set A : ";
 	for(int i = 0; i < a; i++){
 		cin>>A[i];
 	}
-	cout<<" Masukkan nilai dari himpunan B: ";
+	cout<<" Enter value of set B : ";
 	for(int i = 0; i < b; i++){
 		cin>>B[i];
 	}
 	
 	system("cls");
-	cout<<"\n Himpunan A =  {"<<A[0];
+	cout<<"\n Set of A =  {"<<A[0];
 	for(int i = 1; i < a; i++){
 		cout<<", "<<A[i];
 	}cout<<"}";
-	cout<<"\n Himpunan B =  {"<<B[0];
+	cout<<"\n Set of  B =  {"<<B[0];
 	for(int i = 1; i < b; i++){
 		cout<<", "<<B[i];
 	}cout<<"}";
@@ -38,7 +38,7 @@ int main(){
 		}
 	}
 
-	cout<<"\n\n A Irisan B = {"<<C[0];
+	cout<<"\n\n A Slice B = {"<<C[0];
 	for(int i = 1; i < c; i++){
 		cout<<", "<<C[i];
 	}cout<<"}";
